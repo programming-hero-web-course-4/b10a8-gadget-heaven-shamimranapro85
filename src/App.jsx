@@ -7,6 +7,7 @@ import Home from "./components/pages/Home";
 import Details from "./components/pages/details";
 import Dashboard from "./components/pages/Dashboard/Dashboard";
 import Statistics from "./components/pages/Statistics";
+import Shop from "./components/shop";
 
 function App() {
   const { pathname } = useLocation();
@@ -38,6 +39,7 @@ function App() {
             <Route path="/" element={<Home m_v_pages={m_v_pages} />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/statistics" element={<Statistics />} />
+            <Route path="/shopnow" element={<Shop />} />
             <Route path="/details" element={<Details />} />
             <Route
               path="*"
