@@ -50,16 +50,20 @@ const Details = ({ setAddfavElement, setAddCartElement }) => {
                 )}
               </ol>
               <span className="text-black font-bold">Rating:</span>
-              <div style={{ pointerEvents: null }} className="flex py-3 justify-start items-center gap-3">
-                <ReactStars 
-                
+              <div
+                style={{ pointerEvents: null }}
+                className="flex py-3 justify-start items-center gap-3"
+              >
+                <ReactStars
                   count={5}
                   value={item.rating}
                   size={25}
                   isHalf={true}
                   edit={false}
                 />
-              <span className="p-2 rounded-full bg-gray-100 px-4">{item.rating}</span>
+                <span className="p-2 rounded-full bg-gray-100 px-4">
+                  {item.rating}
+                </span>
               </div>
 
               <div className="flex gap-3">
