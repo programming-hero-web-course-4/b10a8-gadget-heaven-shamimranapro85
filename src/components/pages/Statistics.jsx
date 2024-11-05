@@ -52,16 +52,20 @@ const Chart = ({ userAllData }) => {
         <div className="flex justify-between items-center">
           <div>Statistics</div>
         </div>
-        <div className="p-3 relative bg-white w-full rounded-2xl my-5">
+        <div className="p-3 relative overflow-hidden flex items-center justify-center bg-white w-full rounded-2xl my-5">
         
             <BarChart
-              className="w-screen"
+             
               width={700}
               height={300}
               data={userAllData}
+              style={{
+                width:"100%",
+                height:''
+              }}
               margin={{
                 top: 5,
-                right: 10,
+                right: 40,
                 left: 20,
                 bottom: 5,
               }}

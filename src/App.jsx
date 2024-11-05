@@ -187,7 +187,7 @@ function App() {
               }
             />
             <Route path="/statistics" element={<Statistics />} />
-            <Route path="/shopnow" element={<Shop />} />
+            <Route path="/Contact" element={"<Shop />"} />
             <Route
               path="/details"
               element={

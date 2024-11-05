@@ -101,7 +101,7 @@ const Cart = ({
 
             <button
               htmlFor="my_modal_7"
-              onClick={() => purchases(addCart,cartPrice)}
+              onClick={() => purchases(addCart, cartPrice)}
               className={`rounded-full  px-4 py-2 bg-gradient-to-bl  transition-all duration-300 hover:text-purple-500 border  text-white from-purple-500 to-purple-300 hover:from-white`}
             >
               Purchase
