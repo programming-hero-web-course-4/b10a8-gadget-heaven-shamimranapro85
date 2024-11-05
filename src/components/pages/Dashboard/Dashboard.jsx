@@ -7,12 +7,12 @@ const Dashboard = ({
   setAddCartElement,
   deleteCartData,
   deletefavtData,
+  sortByPrice,
+  purchases,
 }) => {
   const [cart, setCart] = useState("Cart");
   const [cartPrice, setCartPrice] = useState(0);
   const handleActive = (e) => {
-    console.log(e.target.innerText == "Cart");
-
     e.target.innerText == "Cart" ? setCart(`Cart`) : setCart("");
   };
   useEffect(() => {
@@ -64,6 +64,8 @@ const Dashboard = ({
           addCart={addCart}
           cartPrice={cartPrice}
           deleteCartData={deleteCartData}
+          sortByPrice={sortByPrice}
+          purchases={purchases}
         />
       ) : (
         <WishList
@@ -76,7 +78,13 @@ const Dashboard = ({
   );
 };
 
-const Cart = ({ addCart, cartPrice, deleteCartData }) => {
+const Cart = ({
+  addCart,
+  cartPrice,
+  deleteCartData,
+  sortByPrice,
+  purchases,
+}) => {
   return (
     <>
       <div className="container mx-auto py-2">
@@ -85,14 +93,18 @@ const Cart = ({ addCart, cartPrice, deleteCartData }) => {
           <div className="flex gap-2 items-center">
             <h1 className="text-black font-bold">Total Cost:{cartPrice}</h1>
             <button
+              onClick={() => sortByPrice(addCart)}
               className={`rounded-full  px-4 py-2 hover:bg-[#9538E2] transition-all duration-300 hover:text-white border text-purple-500 `}
             >
               Sort by Price{" "}
             </button>
+
             <button
+              htmlFor="my_modal_7"
+              onClick={() => purchases(addCart,cartPrice)}
               className={`rounded-full  px-4 py-2 bg-gradient-to-bl  transition-all duration-300 hover:text-purple-500 border  text-white from-purple-500 to-purple-300 hover:from-white`}
             >
-              Purches
+              Purchase
             </button>
           </div>
         </div>
@@ -134,6 +146,16 @@ const Cart = ({ addCart, cartPrice, deleteCartData }) => {
                 );
               })}
         </div>
+      </div>
+      <input type="checkbox" id="my_modal_7" className="modal-toggle" />
+      <div className="modal" role="dialog">
+        <div className="modal-box">
+          <h3 className="text-lg font-bold">Hello!</h3>
+          <p className="py-4">This modal works with a hidden checkbox!</p>
+        </div>
+        <label className="modal-backdrop" htmlFor="my_modal_7">
+          Close
+        </label>
       </div>
     </>
   );

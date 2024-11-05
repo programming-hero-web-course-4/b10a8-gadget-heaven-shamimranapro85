@@ -20,17 +20,22 @@ const Home = ({ m_v_pages }) => {
     })();
   }, []);
 
+  
+
   const Filter_Category = async (e) => {
     const categoryss = e.target.innerHTML;
-    console.log(categoryss);
-
+    const main_father = e.target.parentElement;
+    Array.from(main_father.children).forEach((item) => {
+      if (item !== e.target) {
+        item.style.backgroundColor = "lightgray";
+      }
+    });
+    e.target.style.backgroundColor = "lightblue";
     const filteredData = Data.filter((item) => item.category === categoryss);
     categoryss == "All Product" ? setUserData(Data) : setUserData(filteredData);
   };
 
-  // console.log(Data.map(async(item)=> item.category));
-
-  //   console.log(categorys);
+ 
 
   return (
     <div className="bg-gray-100">
@@ -71,7 +76,7 @@ const Home = ({ m_v_pages }) => {
           <div className="md:col-span-3 rounded-xl bg-white p-3 flex gap-2 flex-col self-start">
             <span
               onClick={Filter_Category}
-              className="p-2 rounded-2xl px-5 bg-gray-200"
+              className="p-2 rounded-2xl  px-5 bg-blue-200"
             >
               All Product
             </span>
@@ -80,7 +85,7 @@ const Home = ({ m_v_pages }) => {
                 <button
                   onClick={Filter_Category}
                   key={index}
-                  className="p-2 text-start rounded-2xl px-5 bg-gray-200"
+                  className="p-2 text-start rounded-2xl px-5 bg-gray-300"
                 >
                   {item}
                 </button>

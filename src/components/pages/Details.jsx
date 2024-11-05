@@ -1,11 +1,11 @@
 import { useLocation } from "react-router-dom";
 import { FaCartPlus } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
+import ReactStars from "react-rating-stars-component";
 const Details = ({ setAddfavElement, setAddCartElement }) => {
   const location = useLocation();
   const item = location.state || {};
-
-
+  console.log(item);
 
   return (
     <div>
@@ -41,8 +41,6 @@ const Details = ({ setAddfavElement, setAddCartElement }) => {
               <ol type="a" className="text-gray-300 ">
                 {Object.entries(item.Specification).map(
                   ([key, value], index) => {
-          
-
                     return (
                       <li key={index}>
                         {key} : {value}
@@ -52,6 +50,17 @@ const Details = ({ setAddfavElement, setAddCartElement }) => {
                 )}
               </ol>
               <span className="text-black font-bold">Rating:</span>
+              <div style={{ pointerEvents: null }} className="flex py-3 justify-start items-center gap-3">
+                <ReactStars 
+                
+                  count={5}
+                  value={item.rating}
+                  size={25}
+                  isHalf={true}
+                  edit={false}
+                />
+              <span className="p-2 rounded-full bg-gray-100 px-4">{item.rating}</span>
+              </div>
 
               <div className="flex gap-3">
                 <button
