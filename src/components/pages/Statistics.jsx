@@ -1,4 +1,10 @@
-import React, { PureComponent } from "react";
+import axios from "axios";
+import React, {
+  PureComponent,
+  useEffect,
+  useLayoutEffect,
+  useState,
+} from "react";
 import {
   BarChart,
   Bar,
@@ -12,6 +18,14 @@ import {
 } from "recharts";
 
 const Statistics = () => {
+  const [userAllData, setUserAllData] = useState([]);
+  useEffect(() => {
+    (async () => {
+      const data = await axios.get("./data.json");
+      console.log(data.data.gadgets);
+      setUserAllData(data.data.gadgets);
+    })();
+  }, []);
   return (
     <div className="bg-gray-100">
       <div className={`bg-[#9538E2]`}>
@@ -24,48 +38,51 @@ const Statistics = () => {
           </p>
         </div>
       </div>
-      <Chart />
+      <Chart userAllData={userAllData} />
     </div>
   );
 };
 
-const Chart = () => {
+const Chart = ({ userAllData }) => {
+  console.log("paichi data: ", userAllData);
+
   return (
     <>
       <div className="container mx-auto py-2">
         <div className="flex justify-between items-center">
           <div>Statistics</div>
         </div>
-        <div className="p-3 bg-white w-full rounded-2xl my-5">
-          <ResponsiveContainer width="100%" height="100%">
+        <div className="p-3 relative bg-white w-full rounded-2xl my-5">
+        
             <BarChart
-              width={500}
+              className="w-screen"
+              width={700}
               height={300}
-              data={data}
+              data={userAllData}
               margin={{
                 top: 5,
-                right: 30,
+                right: 10,
                 left: 20,
                 bottom: 5,
               }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
+              <XAxis dataKey={"product_title"} />
               <YAxis />
               <Tooltip />
               <Legend />
               <Bar
-                dataKey="pv"
-                fill="#8884d8"
-                activeBar={<Rectangle fill="pink" stroke="blue" />}
-              />
+              dataKey="price"
+              fill="#be00e8"
+              activeBar={<Rectangle fill="purple" stroke="purple" />}
+            />
               <Bar
-                dataKey="uv"
-                fill="#82ca9d"
-                activeBar={<Rectangle fill="gold" stroke="purple" />}
+                dataKey="rating"
+                fill="#e4e800"
+                activeBar={<Rectangle fill="purple" stroke="purple" />}
               />
             </BarChart>
-          </ResponsiveContainer>
+    
         </div>
       </div>
     </>
