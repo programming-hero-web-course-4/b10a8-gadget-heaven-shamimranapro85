@@ -34,7 +34,7 @@ const Navber = ({ addCart, addfav }) => {
               stroke="currentColor"
             >
               <path
-                strokeLinecap="round"
+                strokeLinecap="round" 
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
@@ -58,11 +58,11 @@ const Navber = ({ addCart, addfav }) => {
           to={"/dashboard"}
           className="p-2 rounded-full relative !text-gray-200  bg-pink-400 h-7 w-7 flex justify-center items-center ml-2"
         >
-          {addCart < 1 ? (
+          {addCart.length < 1 ? (
             ""
           ) : (
             <span className="rounded-full w-4 h-4 absolute -top-2 -right-1 bg-red-500 text-[10px] flex justify-center items-center">
-              {addCart}
+              {addCart.length}
             </span>
           )}
           <FaCartPlus />
@@ -71,11 +71,11 @@ const Navber = ({ addCart, addfav }) => {
           to={"/dashboard"}
           className="p-2 rounded-full relative bg-pink-400 h-7 w-7 flex !text-gray-200  justify-center items-center ml-2"
         >
-          {addfav < 1 ? (
+          {addfav.length < 1 ? (
             ""
           ) : (
             <span className="rounded-full w-4 h-4 absolute -top-2 -right-1 bg-red-500 text-[10px] flex justify-center items-center">
-              {addfav}
+              {addfav.length}
             </span>
           )}
           <CiHeart />

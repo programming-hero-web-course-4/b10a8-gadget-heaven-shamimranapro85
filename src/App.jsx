@@ -24,7 +24,14 @@ function App() {
   const m_v_pages = "mx-2";
   const [addCart, setAddCart] = useState([]);
   const [addfav, setAddfav] = useState([]);
-
+  const deleteCartData = (id) => {
+    const filtered_data = addCart.filter((item) => item.product_id !== id);
+    setAddCart(filtered_data);
+  };
+  const deletefavtData = (id) => {
+    const filtered_data = addfav.filter((item) => item.product_id !== id);
+    setAddfav(filtered_data);
+  };
   const setAddCartElement = (item) => {
     localStorage.setItem("cart", JSON.stringify(addCart));
     const checking = addCart.some(
@@ -48,14 +55,22 @@ function App() {
           } rounded-tl-2xl rounded-tr-2xl ${m_v_pages}  mt-2`}
         >
           {" "}
-          <Navber addCart={addCart.length} addfav={addfav.length} />
+          <Navber addCart={addCart} addfav={addfav} />
         </div>
         <div className="">
           <Routes>
             <Route path="/" element={<Home m_v_pages={m_v_pages} />} />
             <Route
               path="/dashboard"
-              element={<Dashboard addCart={addCart} addfav={addfav} setAddCartElement={setAddCartElement} />}
+              element={
+                <Dashboard
+                  addCart={addCart}
+                  addfav={addfav}
+                  setAddCartElement={setAddCartElement}
+                  deletefavtData={deletefavtData}
+                  deleteCartData={deleteCartData}
+                />
+              }
             />
             <Route path="/statistics" element={<Statistics />} />
             <Route path="/shopnow" element={<Shop />} />

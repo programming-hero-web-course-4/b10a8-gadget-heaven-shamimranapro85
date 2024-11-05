@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { FaCartPlus } from "react-icons/fa";
 import { RxCrossCircled } from "react-icons/rx";
-const Dashboard = ({ addCart, addfav, setAddCartElement }) => {
+const Dashboard = ({
+  addCart,
+  addfav,
+  setAddCartElement,
+  deleteCartData,
+  deletefavtData,
+}) => {
   const [cart, setCart] = useState("Cart");
   const [cartPrice, setCartPrice] = useState(0);
   const handleActive = (e) => {
@@ -16,7 +22,7 @@ const Dashboard = ({ addCart, addfav, setAddCartElement }) => {
     });
 
     setCartPrice(prices);
-  }, []);
+  }, [addCart]);
 
   return (
     <div className="bg-gray-100">
@@ -54,15 +60,23 @@ const Dashboard = ({ addCart, addfav, setAddCartElement }) => {
       </div>
 
       {cart == "Cart" ? (
-        <Cart addCart={addCart} cartPrice={cartPrice} />
+        <Cart
+          addCart={addCart}
+          cartPrice={cartPrice}
+          deleteCartData={deleteCartData}
+        />
       ) : (
-        <WishList addfav={addfav} setAddCartElement={setAddCartElement} />
+        <WishList
+          addfav={addfav}
+          setAddCartElement={setAddCartElement}
+          deletefavtData={deletefavtData}
+        />
       )}
     </div>
   );
 };
 
-const Cart = ({ addCart, cartPrice }) => {
+const Cart = ({ addCart, cartPrice, deleteCartData }) => {
   return (
     <>
       <div className="container mx-auto py-2">
@@ -112,32 +126,19 @@ const Cart = ({ addCart, cartPrice }) => {
                       </div>
                     </div>
                     <div>
-                      <RxCrossCircled className="text-2xl text-red-500" />
+                      <button onClick={() => deleteCartData(item.product_id)}>
+                        <RxCrossCircled className="text-3xl text-red-500" />
+                      </button>
                     </div>
                   </div>
                 );
               })}
-          {/* <div className="rounded-2xl p-3 bg-white w-full flex justify-between">
-            <div className="grid grid-cols-12 gap-3 items-center">
-              <div className="bg-gray-800 rounded-2xl col-span-3 h-full text-white"></div>
-              <div className="col-span-9 flex flex-col gap-2">
-                <h1 className="text-black font-bold">Samsung s9 ultra pro </h1>
-                <p className="text-sm text-gray-500">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing.
-                </p>
-                <span className="text-black font-bold text-sm">
-                  Price : $ 4587
-                </span>
-              </div>
-            </div>
-            <RxCrossCircled className="text-red-500" />
-          </div> */}
         </div>
       </div>
     </>
   );
 };
-const WishList = ({ addfav, setAddCartElement }) => {
+const WishList = ({ addfav, setAddCartElement, deletefavtData }) => {
   return (
     <>
       <div className="container mx-auto py-2">
@@ -182,27 +183,14 @@ const WishList = ({ addfav, setAddCartElement }) => {
                       </div>
                     </div>
                     <div>
-                      <RxCrossCircled className="text-red-500" />
+                      <RxCrossCircled
+                        onClick={() => deletefavtData(produc.product_id)}
+                        className="text-red-500 text-3xl"
+                      />
                     </div>
                   </div>
                 );
               })}
-          {/* <div className="rounded-2xl p-3 bg-white w-full flex justify-between">
-            <div className="grid grid-cols-12 gap-3 items-center">
-              <div className="bg-gray-800 rounded-2xl col-span-3 h-full">s</div>
-              <div className="col-span-9 flex flex-col gap-2">
-                <h1 className="text-black font-bold">Samsung s9 ultra pro </h1>
-                <p className="text-sm text-gray-500">
-                  <span className="text-black">Description: </span> Lorem ipsum
-                  dolor sit, amet consectetur adipisicing.
-                </p>
-                <span className="text-black font-bold text-sm">
-                  Price : $ 4587
-                </span>
-              </div>
-            </div>
-            <RxCrossCircled className="text-red-500" />
-          </div> */}
         </div>
       </div>
     </>
