@@ -15,6 +15,9 @@ const Navber = ({ addCart, addfav }) => {
       <NavLink to="/Dashboard" className={"mr-1 mb-2 px-3 rounded-md py-2"}>
         Dashboard
       </NavLink>
+      <NavLink to="/Contact" className={"mr-1 mb-2 px-3 rounded-md py-2"}>
+        Contact Us
+      </NavLink>
     </>
   );
   return (

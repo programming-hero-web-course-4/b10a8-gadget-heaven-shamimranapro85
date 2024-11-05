@@ -10,6 +10,7 @@ import Statistics from "./components/pages/Statistics";
 import Shop from "./components/shop";
 import { Flip, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Contact from "./components/pages/Contact";
 
 function App() {
   const navigate = useNavigate();
@@ -187,7 +188,7 @@ function App() {
               }
             />
             <Route path="/statistics" element={<Statistics />} />
-            <Route path="/Contact" element={"<Shop />"} />
+            <Route path="/Contact" element={<Contact />} />
             <Route
               path="/details"
               element={
