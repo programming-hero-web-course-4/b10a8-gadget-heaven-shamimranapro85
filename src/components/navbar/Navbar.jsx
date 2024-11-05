@@ -1,6 +1,8 @@
+import { CiHeart } from "react-icons/ci";
+import { FaCartPlus } from "react-icons/fa";
 import { NavLink, useLocation } from "react-router-dom";
 
-const Navber = () => {
+const Navber = ({ addCart, addfav }) => {
   const { pathname } = useLocation();
   const navItems = (
     <>
@@ -52,12 +54,32 @@ const Navber = () => {
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
       <div className="navbar-end">
-        <a className="p-2 rounded-full bg-pink-400 h-7 w-7 flex justify-center items-center ml-2">
-          b
-        </a>
-        <a className="p-2 rounded-full bg-pink-400 h-7 w-7 flex justify-center items-center ml-2">
-          w
-        </a>
+        <NavLink
+          to={"/dashboard"}
+          className="p-2 rounded-full relative !text-gray-200  bg-pink-400 h-7 w-7 flex justify-center items-center ml-2"
+        >
+          {addCart < 1 ? (
+            ""
+          ) : (
+            <span className="rounded-full w-4 h-4 absolute -top-2 -right-1 bg-red-500 text-[10px] flex justify-center items-center">
+              {addCart}
+            </span>
+          )}
+          <FaCartPlus />
+        </NavLink>
+        <NavLink
+          to={"/dashboard"}
+          className="p-2 rounded-full relative bg-pink-400 h-7 w-7 flex !text-gray-200  justify-center items-center ml-2"
+        >
+          {addfav < 1 ? (
+            ""
+          ) : (
+            <span className="rounded-full w-4 h-4 absolute -top-2 -right-1 bg-red-500 text-[10px] flex justify-center items-center">
+              {addfav}
+            </span>
+          )}
+          <CiHeart />
+        </NavLink>
       </div>
     </div>
   );

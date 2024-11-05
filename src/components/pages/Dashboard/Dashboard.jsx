@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { FaCartPlus } from "react-icons/fa";
 import { RxCrossCircled } from "react-icons/rx";
-const Dashboard = () => {
+const Dashboard = ({ addCart, addfav, setAddCartElement }) => {
   const [cart, setCart] = useState("Cart");
+  const [cartPrice, setCartPrice] = useState(0);
   const handleActive = (e) => {
     console.log(e.target.innerText == "Cart");
 
     e.target.innerText == "Cart" ? setCart(`Cart`) : setCart("");
   };
+  useEffect(() => {
+    let prices = 0;
+    addCart.map((pr) => {
+      prices += pr.price;
+    });
+
+    setCartPrice(prices);
+  }, []);
 
   return (
     <div className="bg-gray-100">
@@ -43,19 +53,23 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {cart == "Cart" ? <Cart /> : <WishList />}
+      {cart == "Cart" ? (
+        <Cart addCart={addCart} cartPrice={cartPrice} />
+      ) : (
+        <WishList addfav={addfav} setAddCartElement={setAddCartElement} />
+      )}
     </div>
   );
 };
 
-const Cart = () => {
+const Cart = ({ addCart, cartPrice }) => {
   return (
     <>
       <div className="container mx-auto py-2">
         <div className="flex justify-between items-center">
           <div>Cart</div>
           <div className="flex gap-2 items-center">
-            <h1 className="text-black font-bold">Total Cost: 999.99</h1>
+            <h1 className="text-black font-bold">Total Cost:{cartPrice}</h1>
             <button
               className={`rounded-full  px-4 py-2 hover:bg-[#9538E2] transition-all duration-300 hover:text-white border text-purple-500 `}
             >
@@ -69,9 +83,43 @@ const Cart = () => {
           </div>
         </div>
         <div className="flex flex-col gap-2 items-center py-5">
-          <div className="rounded-2xl p-3 bg-white w-full flex justify-between">
+          {addCart.length <= 0
+            ? "Could not add in Cart"
+            : addCart.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="rounded-2xl p-3 bg-white w-full flex justify-between"
+                  >
+                    <div className="grid grid-cols-12 gap-3 items-center">
+                      <div className="bg-gray-800 rounded-2xl col-span-3 h-full text-white">
+                        <img
+                          src={item.product_image}
+                          className="object-cover h-full w-full self-center"
+                          alt=""
+                        />
+                      </div>
+                      <div className="col-span-9 flex flex-col gap-2">
+                        <h1 className="text-black font-bold">
+                          {item.product_title}
+                        </h1>
+                        <p className="text-sm text-gray-500">
+                          {item.description}
+                        </p>
+                        <span className="text-black font-bold text-sm">
+                          Price : ${item.price}
+                        </span>
+                      </div>
+                    </div>
+                    <div>
+                      <RxCrossCircled className="text-2xl text-red-500" />
+                    </div>
+                  </div>
+                );
+              })}
+          {/* <div className="rounded-2xl p-3 bg-white w-full flex justify-between">
             <div className="grid grid-cols-12 gap-3 items-center">
-              <div className="bg-gray-800 rounded-2xl col-span-3 h-full">s</div>
+              <div className="bg-gray-800 rounded-2xl col-span-3 h-full text-white"></div>
               <div className="col-span-9 flex flex-col gap-2">
                 <h1 className="text-black font-bold">Samsung s9 ultra pro </h1>
                 <p className="text-sm text-gray-500">
@@ -83,13 +131,13 @@ const Cart = () => {
               </div>
             </div>
             <RxCrossCircled className="text-red-500" />
-          </div>
+          </div> */}
         </div>
       </div>
     </>
   );
 };
-const WishList = () => {
+const WishList = ({ addfav, setAddCartElement }) => {
   return (
     <>
       <div className="container mx-auto py-2">
@@ -97,13 +145,56 @@ const WishList = () => {
           <div>Wishlist</div>
         </div>
         <div className="flex flex-col gap-2 items-center py-5">
-          <div className="rounded-2xl p-3 bg-white w-full flex justify-between">
+          {addfav.length <= 0
+            ? "No data add in whitelist"
+            : addfav.map((produc, indx) => {
+                return (
+                  <div
+                    key={indx}
+                    className="rounded-2xl p-3 bg-white w-full flex justify-between"
+                  >
+                    <div className="grid grid-cols-12 gap-3 items-center">
+                      <div className=" rounded-2xl col-span-3 h-full">
+                        <img
+                          src={produc.product_image}
+                          alt=""
+                          className="h-full w-full object-cover self-center"
+                        />
+                      </div>
+                      <div className="col-span-9 flex flex-col gap-2">
+                        <h1 className="text-black font-bold">
+                          {produc.product_title}
+                        </h1>
+                        <p className="text-sm text-gray-500">
+                          <span className="text-black">Description: </span>{" "}
+                          Lorem
+                          {produc.description}
+                        </p>
+                        <span className="text-black font-bold text-sm">
+                          Price : ${produc.price}
+                        </span>
+                        <button
+                          onClick={() => setAddCartElement(produc)}
+                          className="rounded-full text-sm p-2 flex items-center gap-2 self-start px-4 text-white bg-purple-500"
+                        >
+                          Add to Cart <FaCartPlus />
+                        </button>
+                      </div>
+                    </div>
+                    <div>
+                      <RxCrossCircled className="text-red-500" />
+                    </div>
+                  </div>
+                );
+              })}
+          {/* <div className="rounded-2xl p-3 bg-white w-full flex justify-between">
             <div className="grid grid-cols-12 gap-3 items-center">
               <div className="bg-gray-800 rounded-2xl col-span-3 h-full">s</div>
               <div className="col-span-9 flex flex-col gap-2">
                 <h1 className="text-black font-bold">Samsung s9 ultra pro </h1>
                 <p className="text-sm text-gray-500">
-                  <span className="text-black">Description: </span> Lorem ipsum dolor sit, amet consectetur adipisicing.
+                  <span className="text-black">Description: </span> Lorem ipsum
+                  dolor sit, amet consectetur adipisicing.
                 </p>
                 <span className="text-black font-bold text-sm">
                   Price : $ 4587
@@ -111,7 +202,7 @@ const WishList = () => {
               </div>
             </div>
             <RxCrossCircled className="text-red-500" />
-          </div>
+          </div> */}
         </div>
       </div>
     </>

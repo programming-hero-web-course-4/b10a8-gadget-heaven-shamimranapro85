@@ -1,12 +1,11 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { FaCartPlus } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
-const Details = () => {
-  const navigate = useNavigate();
+const Details = ({ setAddfavElement, setAddCartElement }) => {
   const location = useLocation();
   const item = location.state || {};
-  console.log(item);
-  console.log("object entiere: ", Object.entries(item));
+
+
 
   return (
     <div>
@@ -42,7 +41,7 @@ const Details = () => {
               <ol type="a" className="text-gray-300 ">
                 {Object.entries(item.Specification).map(
                   ([key, value], index) => {
-                    console.log(key);
+          
 
                     return (
                       <li key={index}>
@@ -56,13 +55,15 @@ const Details = () => {
 
               <div className="flex gap-3">
                 <button
-                  onClick={() => console.log("ami add to card")
-                  }
+                  onClick={() => setAddCartElement(item)}
                   className="rounded-full text-sm p-2 flex items-center gap-2 px-4 text-white bg-purple-500"
                 >
                   Add to Cart <FaCartPlus />
                 </button>
-                <button className="rounded-full border p-2 text-sm text-gray-500 ">
+                <button
+                  onClick={() => setAddfavElement(item)}
+                  className="rounded-full border p-2 text-sm text-gray-500 "
+                >
                   <CiHeart />
                 </button>
               </div>
