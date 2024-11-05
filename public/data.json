@@ -1,0 +1,493 @@
+{
+  "gadgets": [
+    {
+      "product_id": "C-001",
+      "product_title": "Laptop Pro X",
+      "product_image": "https://i.ibb.co.com/VMChNgG/Dekstop-PC76eb2536696a478e809adfaa01ee4936.webp",
+      "category": "Computers",
+      "price": 999.99,
+      "description": "High-performance laptop with the latest Intel i7 processor.",
+      "Specification": {
+        "size": "15 inch",
+        "model": "X900",
+        "processor": "Intel Core i7",
+        "RAM": "16GB",
+        "storage": "512GB SSD"
+      },
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": "C-002",
+      "product_title": "Ultra Slim Notebook",
+      "product_image": "https://i.ibb.co.com/D4mBPCN/hq720.jpg",
+      "category": "Computers",
+      "price": 849.99,
+      "description": "Lightweight notebook perfect for on-the-go professionals.",
+      "Specification": {
+        "size": "13 inch",
+        "model": "USN500",
+        "processor": "Intel Core i5",
+        "RAM": "8GB",
+        "storage": "256GB SSD"
+      },
+      "availability": true,
+      "rating": 4.3
+    },
+    {
+      "product_id": "C-003",
+      "product_title": "Gaming Beast 17",
+      "product_image": "https://i.ibb.co.com/CbcVZTx/images1.jpg",
+      "category": "Computers",
+      "price": 1299.99,
+      "description": "Powerful gaming laptop with high refresh rate display.",
+      "Specification": {
+        "size": "17 inch",
+        "model": "GB-1700",
+        "processor": "AMD Ryzen 7",
+        "RAM": "16GB",
+        "storage": "1TB SSD",
+        "graphics": "NVIDIA GeForce RTX 3060"
+      },
+      "availability": false,
+      "rating": 4.8
+    },
+    {
+      "product_id": "C-004",
+      "product_title": "Business Laptop B300",
+      "product_image": "https://i.ibb.co.com/4RgfzVf/Laptop-computer.webp",
+      "category": "Computers",
+      "price": 1099.99,
+      "description": "Reliable business laptop with fingerprint security.",
+      "Specification": {
+        "size": "14 inch",
+        "model": "B300",
+        "processor": "Intel Core i5",
+        "RAM": "8GB",
+        "storage": "512GB SSD"
+      },
+      "availability": true,
+      "rating": 4.4
+    },
+    {
+      "product_id": "C-005",
+      "product_title": "Convertible Laptop Flex",
+      "product_image": "https://i.ibb.co.com/Yyx74pQ/mouse-500x500.webp",
+      "category": "Computers",
+      "price": 749.99,
+      "description": "2-in-1 convertible laptop with touchscreen and pen support.",
+      "Specification": {
+        "size": "14 inch",
+        "model": "Flex-360",
+        "processor": "Intel Core i3",
+        "RAM": "4GB",
+        "storage": "128GB SSD",
+        "touchscreen": "Yes"
+      },
+      "availability": true,
+      "rating": 4.2
+    },
+    {
+      "product_id": "C-006",
+      "product_title": "Workstation Max",
+      "product_image": "https://i.ibb.co.com/bFYHMRS/personal-computer.webp",
+      "category": "Computers",
+      "price": 1599.99,
+      "description": "High-end workstation for intensive tasks and multitasking.",
+      "Specification": {
+        "size": "15 inch",
+        "model": "WM-9000",
+        "processor": "Intel Xeon",
+        "RAM": "32GB",
+        "storage": "1TB SSD",
+        "graphics": "NVIDIA Quadro RTX 4000"
+      },
+      "availability": true,
+      "rating": 4.9
+    },
+    {
+      "product_id": "C-007",
+      "product_title": "Student Laptop Lite",
+      "product_image": "https://i.ibb.co.com/2kXwj68/51p-Nv0-UWQu-L-AC-UF1000-1000-QL80.jpg",
+      "category": "Computers",
+      "price": 399.99,
+      "description": "Affordable laptop designed for students and light usage.",
+      "Specification": {
+        "size": "14 inch",
+        "model": "SL-200",
+        "processor": "Intel Pentium",
+        "RAM": "4GB",
+        "storage": "128GB SSD"
+      },
+      "availability": true,
+      "rating": 4.0
+    },
+    {
+      "product_id": "C-008",
+      "product_title": "MacBook Air 13",
+      "product_image": "https://i.ibb.co.com/NKL4ppV/61-NDs6-M9-GCL-AC-UF1000-1000-QL80.jpg",
+      "category": "Computers",
+      "price": 999.99,
+      "description": "Lightweight laptop with M1 chip for superior performance.",
+      "Specification": {
+        "size": "13 inch",
+        "model": "MacBook Air",
+        "processor": "Apple M1",
+        "RAM": "8GB",
+        "storage": "256GB SSD"
+      },
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": "C-009",
+      "product_title": "Chromebook Go",
+      "product_image": "https://i.ibb.co.com/JR2cdKx/61-V2-SVEN6a-L-AC-UF1000-1000-QL80.jpg",
+      "category": "Computers",
+      "price": 299.99,
+      "description": "Fast and simple Chromebook with long battery life.",
+      "Specification": {
+        "size": "11.6 inch",
+        "model": "CB-Go",
+        "processor": "Intel Celeron",
+        "RAM": "4GB",
+        "storage": "64GB eMMC"
+      },
+      "availability": false,
+      "rating": 4.1
+    },
+    {
+      "product_id": "C-010",
+      "product_title": "Portable Mini PC",
+      "product_image": "https://i.ibb.co.com/6y3Y1ct/550x430.jpg",
+      "category": "Computers",
+      "price": 499.99,
+      "description": "Compact mini PC for home and office use.",
+      "Specification": {
+        "size": "Mini",
+        "model": "PC-Mini2023",
+        "processor": "AMD Ryzen 5",
+        "RAM": "8GB",
+        "storage": "256GB SSD"
+      },
+      "availability": true,
+      "rating": 4.3
+    },
+    {
+      "product_id": "P-001",
+      "product_title": "iPhone 13 Pro Max",
+      "product_image": "https://i.ibb.co.com/K04ZNry/71qvkjmkd2l.webp",
+      "category": "Phones",
+      "price": 1099.99,
+      "description": "Apple's flagship phone with A15 Bionic chip and ProMotion display.",
+      "Specification": {
+        "size": "6.7 inch",
+        "model": "iPhone 13 Pro Max",
+        "processor": "A15 Bionic",
+        "RAM": "6GB",
+        "storage": "128GB"
+      },
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": "P-002",
+      "product_title": "Samsung Galaxy S21 Ultra",
+      "product_image": "https://i.ibb.co.com/XXdMVJn/6605d8b73f923f7dab026b90.webp",
+      "category": "Phones",
+      "price": 1199.99,
+      "description": "Samsung's ultra-premium phone with a 108MP camera and 100x Space Zoom.",
+      "Specification": {
+        "size": "6.8 inch",
+        "model": "Galaxy S21 Ultra",
+        "processor": "Exynos 2100",
+        "RAM": "12GB",
+        "storage": "256GB"
+      },
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": "P-003",
+      "product_title": "Apple iPhone 11",
+      "product_image": "https://i.ibb.co.com/hY5kZyF/apple-iphone-11-2019.webp",
+      "category": "Phones",
+      "price": 599.99,
+      "description": "Affordable iPhone with A13 Bionic chip and dual-camera system.",
+      "Specification": {
+        "size": "6.1 inch",
+        "model": "iPhone 11",
+        "processor": "A13 Bionic",
+        "RAM": "4GB",
+        "storage": "64GB"
+      },
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": "P-004",
+      "product_title": "Google Pixel 7a",
+      "product_image": "https://i.ibb.co.com/vLrH7S0/google-pixel-7a-phone-14.webp",
+      "category": "Phones",
+      "price": 449.99,
+      "description": "Google’s mid-range phone with excellent camera and stock Android experience.",
+      "Specification": {
+        "size": "6.1 inch",
+        "model": "Pixel 7a",
+        "processor": "Google Tensor",
+        "RAM": "6GB",
+        "storage": "128GB"
+      },
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": "P-005",
+      "product_title": "OnePlus 9 Pro",
+      "product_image": "https://i.ibb.co.com/yp949WX/LNbtwy-ESYS9-LAw-Ntcn-CCi-S-320-80.jpg",
+      "category": "Phones",
+      "price": 969.99,
+      "description": "High-performance phone with Hasselblad-tuned cameras and fast charging.",
+      "Specification": {
+        "size": "6.7 inch",
+        "model": "OnePlus 9 Pro",
+        "processor": "Snapdragon 888",
+        "RAM": "12GB",
+        "storage": "256GB"
+      },
+      "availability": false,
+      "rating": 4.4
+    },
+    {
+      "product_id": "SW-001",
+      "product_title": "Apple Watch Series 8",
+      "product_image": "https://i.ibb.co.com/8jHZqnD/images.jpg",
+      "category": "Smart Watches",
+      "price": 399.99,
+      "description": "Advanced health and fitness tracking with ECG, SpO2, and always-on display.",
+      "Specification": {
+        "size": "45mm",
+        "model": "Series 8",
+        "battery_life": "18 hours",
+        "water_resistance": "50m"
+      },
+      "availability": true,
+      "rating": 4.9
+    },
+    {
+      "product_id": "SW-002",
+      "product_title": "Samsung Galaxy Watch 5",
+      "product_image": "https://i.ibb.co.com/TcXRQHS/s-l1200.jpg",
+      "category": "Smart Watches",
+      "price": 279.99,
+      "description": "Samsung's latest smartwatch with body composition analysis and sleep tracking.",
+      "Specification": {
+        "size": "44mm",
+        "model": "Galaxy Watch 5",
+        "battery_life": "40 hours",
+        "water_resistance": "50m"
+      },
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": "SW-003",
+      "product_title": "Fitbit Versa 3",
+      "product_image": "https://i.ibb.co.com/HnBqJtN/Smart-Watch-for-Women-1-69-Inch-Smartwatch-for-Android-Ios-IP67-Waterproof-Outdoor-Fitness-Tracker-S.webp",
+      "category": "Smart Watches",
+      "price": 229.95,
+      "description": "Fitness and health smartwatch with built-in GPS, heart rate monitoring, and voice assistant.",
+      "Specification": {
+        "size": "40mm",
+        "model": "Versa 3",
+        "battery_life": "6 days",
+        "water_resistance": "50m"
+      },
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": "SW-004",
+      "product_title": "Garmin Venu 2",
+      "product_image": "https://i.ibb.co.com/w73681h/ca9d738c-bcc9-4b75-aae3-6f798fe26007-3b654db1666a69b2e98820557c73f730.webp",
+      "category": "Smart Watches",
+      "price": 399.99,
+      "description": "Premium fitness smartwatch with AMOLED display, advanced health tracking, and built-in GPS.",
+      "Specification": {
+        "size": "45mm",
+        "model": "Venu 2",
+        "battery_life": "11 days",
+        "water_resistance": "50m"
+      },
+      "availability": false,
+      "rating": 4.7
+    },
+    {
+      "product_id": "SW-005",
+      "product_title": "Amazfit Bip U Pro",
+      "product_image": "https://i.ibb.co.com/rk48Jrp/dda6bc1f-d282-4cf9-ad29-e827222bc4d5-8d402328f4d54e2b9a252879ec51fb79.webp",
+      "category": "Smart Watches",
+      "price": 69.99,
+      "description": "Affordable smartwatch with built-in GPS, SpO2 monitor, and Alexa support.",
+      "Specification": {
+        "size": "42mm",
+        "model": "Bip U Pro",
+        "battery_life": "9 days",
+        "water_resistance": "50m"
+      },
+      "availability": true,
+      "rating": 4.3
+    },
+    {
+      "product_id": "CH-001",
+      "product_title": "Anker 20W USB-C Charger (2-Pack)",
+      "product_image": "https://i.ibb.co.com/vk7z9QN/654003ca45a4726dab4a4ee7-phone-charger-2-pack-20w-charging-cable.jpg",
+      "category": "Chargers",
+      "price": 29.99,
+      "description": "Compact and fast 20W USB-C chargers, ideal for iPhone and Android.",
+      "Specification": {
+        "type": "USB-C",
+        "power": "20W",
+        "compatibility": "iPhone, Android"
+      },
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": "CH-002",
+      "product_title": "Baseus 25W GaN Charger",
+      "product_image": "https://i.ibb.co.com/MSMBqcy/Baseus-Charger-Ga-N5-25-W-mini-For-Samsung-S24-S23-S21-S20-Google-Pixel-Iphone-15-Series-With-Type-c.webp",
+      "category": "Chargers",
+      "price": 19.99,
+      "description": "Mini 25W GaN charger compatible with Samsung, Google Pixel, and iPhone.",
+      "Specification": {
+        "type": "USB-C",
+        "power": "25W",
+        "technology": "GaN",
+        "compatibility": "Samsung, Google Pixel, iPhone"
+      },
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": "CH-003",
+      "product_title": "Hoco CS15 PD 30W Fast Charger",
+      "product_image": "https://i.ibb.co.com/d497PcG/Hoco-CS15-PD-30-W-FAST-CHARGER-1.jpg",
+      "category": "Chargers",
+      "price": 24.99,
+      "description": "Fast 30W PD charger with compact design, ideal for quick charging on the go.",
+      "Specification": {
+        "type": "USB-C",
+        "power": "30W",
+        "compatibility": "iPhone, Android, Tablets"
+      },
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": "CH-004",
+      "product_title": "Spigen 40W Dual USB-C Charger",
+      "product_image": "https://i.ibb.co.com/TqSXKw2/42d2f57f228617c59b5b85dcf1c35d9858f003157254e4659324c29e6c1b817d.png",
+      "category": "Chargers",
+      "price": 34.99,
+      "description": "Dual USB-C charger with 40W total output, perfect for multiple devices.",
+      "Specification": {
+        "type": "Dual USB-C",
+        "power": "40W",
+        "compatibility": "Multiple Devices"
+      },
+      "availability": true,
+      "rating": 4.9
+    },
+    {
+      "product_id": "CH-005",
+      "product_title": "Google 18W USB-C Power Adapter",
+      "product_image": "https://i.ibb.co.com/VLmdtYZ/65d5158c3a4ec204a365b067-google-original-usb-c-charger-18w-pd.jpg",
+      "category": "Chargers",
+      "price": 15.99,
+      "description": "Official Google 18W USB-C charger, designed for fast charging of Google devices.",
+      "Specification": {
+        "type": "USB-C",
+        "power": "18W",
+        "compatibility": "Google Devices, USB-C Compatible Phones"
+      },
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": "PB-001",
+      "product_title": "Anker PowerCore 10000mAh Portable Charger",
+      "product_image": "https://i.ibb.co.com/5LkLBtM/61ln-Y6k27-VL-AC-UF350-350-QL80.jpg",
+      "category": "Power Banks",
+      "price": 22.99,
+      "description": "Compact 10000mAh power bank for charging your phone on the go.",
+      "Specification": {
+        "capacity": "10000mAh",
+        "ports": "1x USB-A",
+        "weight": "180g"
+      },
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": "PB-002",
+      "product_title": "RAVPower 20000mAh Power Bank",
+      "product_image": "https://i.ibb.co.com/8xXX4tR/71-GGWUz-HPd-L-AC-SL1500.jpg",
+      "category": "Power Banks",
+      "price": 39.99,
+      "description": "High-capacity 20000mAh power bank with fast charging capabilities.",
+      "Specification": {
+        "capacity": "20000mAh",
+        "ports": "2x USB-A, 1x USB-C",
+        "fast_charging": true
+      },
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": "PB-003",
+      "product_title": "Mi Power Bank 3 10000mAh",
+      "product_image": "https://i.ibb.co.com/Gt659RY/images.jpg",
+      "category": "Power Banks",
+      "price": 18.99,
+      "description": "Sleek and slim power bank with 10000mAh capacity for quick recharges.",
+      "Specification": {
+        "capacity": "10000mAh",
+        "ports": "1x USB-C, 1x USB-A",
+        "weight": "240g"
+      },
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": "PB-004",
+      "product_title": "Samsung 20000mAh 25W Fast Charging Power Bank",
+      "product_image": "https://i.ibb.co.com/LhtMgRG/Samsung-20000-MAh-25-W-Fast-Charging-Power-Bank-2.webp",
+      "category": "Power Banks",
+      "price": 49.99,
+      "description": "Power bank with 25W fast charging and large 20000mAh capacity.",
+      "Specification": {
+        "capacity": "20000mAh",
+        "ports": "2x USB-C",
+        "fast_charging": true
+      },
+      "availability": true,
+      "rating": 4.9
+    },
+    {
+      "product_id": "PB-005",
+      "product_title": "AUKEY 10000mAh Wireless Charging Power Bank",
+      "product_image": "https://i.ibb.co.com/kJ0KpHs/51zbw-Q65j6-L-AC-SL1500.jpg",
+      "category": "Power Banks",
+      "price": 29.99,
+      "description": "Portable power bank with 10000mAh capacity and wireless charging.",
+      "Specification": {
+        "capacity": "10000mAh",
+        "ports": "1x USB-C, 1x USB-A",
+        "wireless_charging": true
+      },
+      "availability": true,
+      "rating": 4.6
+    }
+  ]
+}

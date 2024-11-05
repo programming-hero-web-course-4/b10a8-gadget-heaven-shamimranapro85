@@ -5,6 +5,8 @@ import Footer from "./components/footer/Footer";
 import { useEffect } from "react";
 import Home from "./components/pages/Home";
 import Details from "./components/pages/details";
+import Dashboard from "./components/pages/Dashboard/Dashboard";
+import Statistics from "./components/pages/Statistics";
 
 function App() {
   const { pathname } = useLocation();
@@ -18,7 +20,7 @@ function App() {
     return () => {};
   }, [pathname]);
 
-  const m_v_pages = "mx-2"
+  const m_v_pages = "mx-2";
 
   return (
     <>
@@ -34,8 +36,13 @@ function App() {
         <div className="">
           <Routes>
             <Route path="/" element={<Home m_v_pages={m_v_pages} />} />
-            <Route path="/details" element={<Details/>}/>
-            <Route path="*" element={<h1 className="text-center h-[80vh]">NOT FOUND 404</h1>}/>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/statistics" element={<Statistics />} />
+            <Route path="/details" element={<Details />} />
+            <Route
+              path="*"
+              element={<h1 className="text-center h-[80vh]">NOT FOUND 404</h1>}
+            />
           </Routes>
         </div>
         <Footer />
