@@ -1,26 +1,22 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-const Home = ({ m_v_pages }) => {
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
+const Home = ({ m_v_pages ,collectCategory,catergoryData}) => {
   const navigate = useNavigate();
   const [Data, setData] = useState([]);
   const [useData, setUserData] = useState([]);
-  let [categorys, setCategorys] = useState([]);
+
+
   useEffect(() => {
     (async () => {
       const res = await axios.get("./data.json");
       const data = res.data.gadgets;
       setData(data);
       setUserData(data);
-      const categoryss = await data.map((item) => {
-        return item.category;
-      });
-
-      setCategorys([...new Set(categoryss)]);
+ 
+   
     })();
   }, []);
-
-  
 
   const Filter_Category = async (e) => {
     const categoryss = e.target.innerHTML;
@@ -33,9 +29,8 @@ const Home = ({ m_v_pages }) => {
     e.target.style.backgroundColor = "lightblue";
     const filteredData = Data.filter((item) => item.category === categoryss);
     categoryss == "All Product" ? setUserData(Data) : setUserData(filteredData);
+    collectCategory(categoryss)
   };
-
- 
 
   return (
     <div className="bg-gray-100">
@@ -80,9 +75,9 @@ const Home = ({ m_v_pages }) => {
             >
               All Product
             </span>
-            {categorys.map((item, index) => {
+            {catergoryData.map((item, index) => {
               return (
-                <button
+                <button 
                   onClick={Filter_Category}
                   key={index}
                   className="p-2 text-start rounded-2xl px-5 bg-gray-300"
@@ -94,36 +89,7 @@ const Home = ({ m_v_pages }) => {
           </div>
           {/* item boxes */}
           <div className="md:col-span-9 rounded-xl  p-3 py-0 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {useData.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className="bg-white rounded-md p-4 flex flex-col gap-4 "
-                >
-                  <div className="rounded-xl overflow-hidden bg-gray-400 w-full h-48">
-                    <img
-                      src={item.product_image}
-                      className="object-cover h-full w-full self-center"
-                      alt=""
-                    />
-                  </div>
-                  <h1 className="text-black font-bold">{item.product_title}</h1>
-                  <p className="text-gray-500 grow">{item.description}</p>
-                  <button
-                    onClick={() =>
-                      navigate("details", {
-                        state: item,
-                      })
-                    }
-                    className={
-                      "rounded-full border text-purple-500 p-3 py-2 self-start transition-all hover:bg-purple-500 duration-150 hover:text-white"
-                    }
-                  >
-                    View Details
-                  </button>
-                </div>
-              );
-            })}
+            <Outlet />
           </div>
         </div>
       </div>

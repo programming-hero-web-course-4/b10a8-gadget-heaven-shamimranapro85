@@ -7,10 +7,13 @@ import Home from "./components/pages/Home";
 import Details from "./components/pages/details";
 import Dashboard from "./components/pages/Dashboard/Dashboard";
 import Statistics from "./components/pages/Statistics";
-import Shop from "./components/shop";
+
 import { Flip, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Contact from "./components/pages/Contact";
+import Same from "./components/Same";
+import DataLoader from "./components/pages/DataLoader";
+import axios from "axios";
 
 function App() {
   const navigate = useNavigate();
@@ -159,11 +162,36 @@ function App() {
       setAddfav([...addfav, item]);
     }
   };
+
+  const [Data, setData] = useState([]);
+  const [useData, setUserData] = useState([]);
+  const [catergoryData, setCategoryData] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const res = await axios.get("./data.json");
+      const data = res.data.gadgets;
+      setData(data);
+      setUserData(data);
+      setCategoryData(res.data.category);
+    })();
+  }, []);
+
+  const [navUrl, setNavUrl] = useState("/");
+  const collectCategory = (e) => {
+    if (e == "All Product") {
+      navigate("/");
+      setNavUrl("/");
+    } else {
+      navigate(e);
+      setNavUrl(e);
+    }
+  };
   return (
     <>
       <div>
         <div
-          className={` sticky top-0 backdrop-blur-sm z-50  border-b  ${
+          className={` sticky top-0 backdrop-blur-sm z-50   ${
             pathname == "/" ? "bg-[#9538E2]" : "bg-white/40"
           } rounded-tl-2xl rounded-tr-2xl ${m_v_pages}  mt-2`}
         >
@@ -172,7 +200,21 @@ function App() {
         </div>
         <div className="">
           <Routes>
-            <Route path="/" element={<Home m_v_pages={m_v_pages} />} />
+            <Route
+              path="/"
+              element={
+                <Home
+                  m_v_pages={m_v_pages}
+                  catergoryData={catergoryData}
+                  collectCategory={collectCategory}
+                />
+              }
+            >
+              <Route
+                path={navUrl}
+                element={<DataLoader navUrl={navUrl} useData={useData} />}
+              />
+            </Route>
             <Route
               path="/dashboard"
               element={
@@ -189,6 +231,9 @@ function App() {
             />
             <Route path="/statistics" element={<Statistics />} />
             <Route path="/Contact" element={<Contact />} />
+            <Route path="/same" element={<Same />}>
+              <Route path="shamim" element={<h1>shamim</h1>}></Route>
+            </Route>
             <Route
               path="/details"
               element={
