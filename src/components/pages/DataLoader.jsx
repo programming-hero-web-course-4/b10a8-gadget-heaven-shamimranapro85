@@ -3,15 +3,19 @@ import { useNavigate } from "react-router-dom";
 
 const DataLoader = ({ navUrl, useData }) => {
   const navigate = useNavigate();
-  const [userShowingData, setShowingData] = useState([]);
+  const [userShowingData, setShowingData] = useState(useData);
+
   useEffect(() => {
+     
     if (navUrl == "/") {
       setShowingData(useData);
     } else {
       const filterData = useData.filter((item) => navUrl === item.category);
       setShowingData(filterData);
     }
-  }, [navigate]);
+  }, [navigate,useData]);
+
+ 
 
   return (
     <>
@@ -34,7 +38,7 @@ const DataLoader = ({ navUrl, useData }) => {
                 <p className="text-gray-500 grow">{item.description}</p>
                 <button
                   onClick={() =>
-                    navigate("details", {
+                    navigate("/details", {
                       state: item,
                     })
                   }

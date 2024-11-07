@@ -163,7 +163,6 @@ function App() {
     }
   };
 
-  const [Data, setData] = useState([]);
   const [useData, setUserData] = useState([]);
   const [catergoryData, setCategoryData] = useState([]);
 
@@ -171,7 +170,6 @@ function App() {
     (async () => {
       const res = await axios.get("./data.json");
       const data = res.data.gadgets;
-      setData(data);
       setUserData(data);
       setCategoryData(res.data.category);
     })();
@@ -187,6 +185,7 @@ function App() {
       setNavUrl(e);
     }
   };
+
   return (
     <>
       <div>
