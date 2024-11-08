@@ -94,15 +94,17 @@ const Cart = ({
             <h1 className="text-black font-bold">Total Cost:{cartPrice}</h1>
             <button
               onClick={() => sortByPrice(addCart)}
-              className={`rounded-full  px-4 py-2 hover:bg-[#9538E2] transition-all duration-300 hover:text-white border text-purple-500 `}
+              disabled={cartPrice < 1}
+              className={`rounded-full  disabled:bg-gray-200 disabled:text-gray-500 px-4 py-2 hover:bg-[#9538E2] transition-all duration-300 hover:text-white border text-purple-500 `}
             >
               Sort by Price{" "}
             </button>
 
             <button
+              disabled={cartPrice < 1}
               htmlFor="my_modal_7"
               onClick={() => purchases(addCart, cartPrice)}
-              className={`rounded-full  px-4 py-2 bg-gradient-to-bl  transition-all duration-300 hover:text-purple-500 border  text-white from-purple-500 to-purple-300 hover:from-white`}
+              className={`rounded-full  disabled:bg-gray-200 disabled:text-gray-500  px-4 py-2  transition-all duration-300 hover:text-purple-500 border   text-white from-purple-500 bg-purple-500 hover:bg-white`}
             >
               Purchase
             </button>
