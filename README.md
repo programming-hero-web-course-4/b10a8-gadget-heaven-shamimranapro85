@@ -2,7 +2,8 @@
 
 ## Live Visit
 
-[Check out the live version of the website](https://gadget-heaven-shamimpro.surge.sh).
+[Visit site](https://gadget-heaven-shamimpro.surge.sh).
+[Requirement Document](https://drive.google.com/file/d/1x7cNnXU2zhoMsvvoT_LSSD2xWb3rj5pq/view).
 note: - live link from surge deploying provider so 404 (any routes) and other many function not working perfectly.
 you can run perfectly then download this repo and run locally 
 ## React Fundamentals Used
